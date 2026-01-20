@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campaign Published! - ImpactSeed</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="success.css">
+</head>
+
+<body>
+
+    <main class="success-container">
+        <div class="confetti-wrapper">
+            <div class="success-icon">
+                <i class="bi bi-check-circle-fill"></i>
+            </div>
+        </div>
+
+        <section class="success-content">
+            <h1>Your Campaign is Live!</h1>
+            <p>Congratulations! Your project <strong>"Clean Water for Highland Village"</strong> is now verified and
+                accepting donations.</p>
+
+            <div class="share-box">
+                <label>Share your unique campaign link:</label>
+                <div class="link-input">
+                    <input type="text" value="impactseed.org/c/clean-water-village" readonly id="shareLink">
+                    <button onclick="copyLink()"><i class="bi bi-copy"></i> Copy</button>
+                </div>
+            </div>
+
+            <div class="action-grid">
+                <button class="btn-primary" onclick="alert('Shared on Twitter!')"><i class="bi bi-megaphone"></i>
+                    Promote on Twitter</button>
+                <a href="UserProfile.html" class="btn-secondary" style="text-decoration:none; display:inline-block;"><i
+                        class="bi bi-grid-1x2"></i> View Dashboard</a>
+            </div>
+
+            <div class="trust-badge">
+                <i class="bi bi-shield-lock-fill"></i>
+                <span>Verified by ImpactSeed Anti-Fraud AI</span>
+            </div>
+        </section>
+
+        <footer class="success-footer">
+            <a href="index.html">Back to Home</a>
+        </footer>
+    </main>
+
+    <script>
+        function copyLink() {
+            var copyText = document.getElementById("shareLink");
+            copyText.select();
+            document.execCommand("copy");
+            alert("Link copied to clipboard!");
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ImpactSeed - Campaign Details</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="Styles.css">
+</head>
+
+<body class="bg-light">
+
+
+    <header class="header">
+        <div class="container nav">
+            <a href="index.html" class="logo-wrapper">
+                <img src="public/img/logo.png" alt="ImpactSeed" class="logo">
+                <span class="logo-text">ImpactSeed</span>
+            </a>
+
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="ExploreCampanig.html" class="nav-link">Explore</a>
+                <a href="StartCampaign.html" class="nav-link">Start Campaign</a>
+            </div>
+
+            <a href="login.html" class="login-btn" id="globalLoginBtn" aria-label="Login">Login</a>
+        </div>
+    </header>
+
+    <main class="container my-4 my-md-5">
+        <div class="row g-4 justify-content-center">
+
+            <div class="col-12 col-lg-7">
+                <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+                    <div class="position-relative">
+                        <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb7d5b1e?auto=format&fit=crop&q=80&w=1000"
+                            alt="Project Green Canopy" class="main-campaign-img" id="detailImage">
+                        <span id="detailCategory"
+                            class="position-absolute top-0 start-0 m-3 badge bg-white text-success border border-success fw-bold px-3 py-2 rounded-pill shadow-sm">ENVIRONMENT</span>
+                    </div>
+                    <div class="card-body p-4">
+                        <h1 class="h2 fw-bold mb-3" id="detailTitle">Project Green Canopy</h1>
+                        <p class="text-secondary fs-5">Reforesting 500 acres of local wildlife habitats to combat carbon
+                            emissions.</p>
+
+                        <hr class="my-4 opacity-50">
+
+                        <h5 class="fw-bold mb-3 border-start border-4 border-primary ps-3">About Campaign</h5>
+                        <p class="text-secondary" style="line-height: 1.8;">
+                            This project aims to restore the natural ecosystem by planting diverse native tree species.
+                            It will provide a habitat for local wildlife, improve air quality in the region, and engage
+                            the local community in conservation efforts.
+                        </p>
+
+                        <div class="row g-3 mt-3">
+                            <div class="col-6 col-sm-4">
+                                <div class="p-3 rounded-4 bg-white border text-center h-100">
+                                    <i class="bi bi-tree-fill text-success fs-3 mb-2 d-block"></i>
+                                    <h6 class="fw-bold small mb-0">Eco-Friendly</h6>
+                                </div>
+                            </div>
+                            <div class="col-6 col-sm-4">
+                                <div class="p-3 rounded-4 bg-white border text-center h-100">
+                                    <i class="bi bi-globe-americas text-primary fs-3 mb-2 d-block"></i>
+                                    <h6 class="fw-bold small mb-0">Global Impact</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-lg-4">
+                <div class="sticky-top" style="top: 100px;">
+                    <div class="card border-0 shadow-sm rounded-4 p-4 mb-4">
+                        <div class="mb-4">
+                            <div class="d-flex justify-content-between align-items-end mb-2">
+                                <h3 class="fw-bold text-primary mb-0" id="detailCurrentAmount">$42,500</h3>
+                                <span class="badge bg-primary bg-opacity-10 text-primary px-3 py-2 rounded-pill">78%
+                                    Goal</span>
+                            </div>
+                            <div class="progress rounded-pill mb-3 bg-light" style="height: 12px;">
+                                <div class="progress-bar bg-primary progress-bar-striped progress-bar-animated"
+                                    role="progressbar" style="width: 78%"></div>
+                            </div>
+                            <p class="text-muted small">Raised of <strong id="detailGoalAmount">$55,000</strong></p>
+                        </div>
+
+                        <div class="row text-center g-2 mb-4">
+                            <div class="col-6 border-end">
+                                <h6 class="fw-bold mb-0">1,240</h6>
+                                <small class="text-muted">Backers</small>
+                            </div>
+                            <div class="col-6">
+                                <h6 class="fw-bold mb-0">12 Days</h6>
+                                <small class="text-muted">Left</small>
+                            </div>
+                        </div>
+
+
+                        <div class="mb-3">
+                            <label class="form-label fw-bold text-muted small text-uppercase">Make a
+                                Contribution</label>
+
+
+                            <div class="input-group mb-2">
+                                <span class="input-group-text bg-white border-end-0"><i class="bi bi-globe"></i></span>
+                                <select class="form-select border-start-0" id="currencySelector">
+
+                                    <option value="USD" data-symbol="$">USD ($)</option>
+                                    <option value="EUR" data-symbol="€">EUR (€)</option>
+                                    <option value="GBP" data-symbol="£">GBP (£)</option>
+                                    <option value="INR" data-symbol="₹">INR (₹)</option>
+                                    <option value="JPY" data-symbol="¥">JPY (¥)</option>
+                                    <option value="AUD" data-symbol="A$">AUD (A$)</option>
+                                    <option value="CAD" data-symbol="C$">CAD (C$)</option>
+                                </select>
+                            </div>
+
+
+                            <div class="input-group mb-3">
+                                <span class="input-group-text fw-bold fs-5" id="currencySymbol">$</span>
+                                <input type="number" class="form-control form-control-lg fw-bold" id="donationAmount"
+                                    placeholder="Enter amount" value="50">
+                            </div>
+                        </div>
+
+                        <div class="d-grid gap-3">
+                            <button id="donateBtn"
+                                class="btn btn-primary btn-lg rounded-pill fw-bold py-3 shadow-sm transition-base text-decoration-none">
+                                <span id="donateBtnText">Donate $50</span>
+                            </button>
+                            <button
+                                class="btn btn-outline-secondary btn-lg rounded-pill fw-bold py-3 transition-base share-action">
+                                <i class="bi bi-share-fill me-2"></i>Share
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="card border-0 bg-primary bg-opacity-10 rounded-4 p-4 text-center">
+                        <div class="mx-auto bg-primary text-white rounded-circle d-flex align-items-center justify-content-center mb-3 shadow-sm"
+                            style="width: 45px; height: 45px;">
+                            <i class="bi bi-shield-check fs-4"></i>
+                        </div>
+                        <h6 class="fw-bold">ImpactSeed Verified</h6>
+                        <p class="small text-muted">This project has met all community safety and transparency
+                            standards.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-column">
+                <a href="index.html" class="logo-wrapper" style="margin-bottom: 1.25rem;">
+                    <img src="public/img/logo.png" alt="ImpactSeed" class="logo">
+                    <span class="logo-text">ImpactSeed</span>
+                </a>
+                <p>Empowering ideas that change the world. Join us in making a difference.</p>
+            </div>
+
+            <div class="footer-column">
+                <h5>Platform</h5>
+                <ul>
+                    <li><a href="ExploreCampanig.html">Explore</a></li>
+                    <li><a href="StartCampaign.html">Start Campaign</a></li>
+                    <li><a href="#">How it Works</a></li>
+                    <li><a href="#">Pricing</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h5>Community</h5>
+                <ul>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Guidelines</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h5>Stay Connected</h5>
+                <p style="margin-bottom:1rem;">Join our newsletter for updates.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="social-link"><i class="bi bi-twitter-x"></i></a>
+                    <a href="#" class="social-link"><i class="bi bi-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="bi bi-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 ImpactSeed. All rights reserved.</p>
+            <div style="display:flex; gap:1.5rem;">
+                <a href="#" style="color:#64748b; text-decoration:none; font-size:0.85rem;">Privacy Policy</a>
+                <a href="#" style="color:#64748b; text-decoration:none; font-size:0.85rem;">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

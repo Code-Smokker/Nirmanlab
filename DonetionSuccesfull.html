@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donation Successful</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="success-page-body">
+
+    <div class="success-overlay">
+        <div class="success-card">
+            <button class="close-btn" aria-label="Close">
+                <a href="./index.html"> <i class="fa-solid fa-xmark"></i></a>
+            </button>
+
+            <h2 class="success-header">Donation Successful</h2>
+
+            <div class="success-content">
+                <div class="success-left">
+                    <div class="check-circle">
+                        <i class="fa-solid fa-check"></i>
+                    </div>
+                    <h1>Thank You!</h1>
+                    <p class="success-msg">Your contribution is making a real difference in the lives of many.</p>
+                </div>
+
+                <div class="success-right">
+                    <div class="summary-box">
+                        <div class="summary-header-label">DONATION SUMMARY</div>
+                        <div class="summary-amount">$50.00</div>
+                        <div class="summary-campaign">
+                            <div class="summary-details">
+                                <h3>Clean Water for Rural Communities</h3>
+                                <p>Impact: Provides clean water for 5 families</p>
+                            </div>
+                            <img src="public/img/WaterInitiative.png" alt="Campaign" class="summary-img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="success-footer">
+                <p class="share-label">Inspire others by sharing this campaign</p>
+                <div class="share-icons">
+                    <button class="share-btn"><i class="fa-solid fa-share-nodes"></i></button>
+                    <button class="share-btn"><i class="fa-solid fa-message"></i></button>
+                    <button class="share-btn"><i class="fa-solid fa-arrow-up-right-from-square"></i></button>
+                </div>
+
+                <a href="ExploreCampanig.html" class="btn-explore">Back to Explore</a>
+                <a href="#" class="link-receipt">View Receipt</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. Get Donation Data
+            const donationStr = localStorage.getItem('lastDonation');
+            if (donationStr) {
+                const donation = JSON.parse(donationStr);
+                const amountEl = document.querySelector('.summary-amount');
+                if (amountEl && donation.amount) {
+                    amountEl.textContent = `${donation.symbol || '$'}${parseFloat(donation.amount).toFixed(2)}`;
+                }
+            }
+
+            // 2. Get Campaign Data (to match title/image)
+            const campaignStr = localStorage.getItem('impactSeed_campaign');
+            if (campaignStr) {
+                const campaign = JSON.parse(campaignStr);
+                const titleEl = document.querySelector('.summary-details h3');
+                const imgEl = document.querySelector('.summary-img');
+
+                if (titleEl && campaign.title) titleEl.textContent = campaign.title;
+                if (imgEl && campaign.image) imgEl.src = campaign.image;
+            }
+        });
+    </script>
+</body>
+
+</html>

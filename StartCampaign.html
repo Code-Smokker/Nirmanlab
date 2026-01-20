@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start a Campaign - ImpactSeed</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="Styles.css"> <!-- Global Styles -->
+    <link rel="stylesheet" href="StartCampaign.css"> <!-- Page Specific -->
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Global Navbar -->
+    <header class="header">
+        <div class="container nav">
+            <a href="index.html" class="logo-wrapper">
+                <img src="public/img/logo.png" alt="ImpactSeed" class="logo">
+                <span class="logo-text">ImpactSeed</span>
+            </a>
+
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="ExploreCampanig.html" class="nav-link">Explore</a>
+                <a href="StartCampaign.html" class="nav-link active">Start Campaign</a>
+            </div>
+
+            <a href="login.html" class="login-btn" id="globalLoginBtn" aria-label="Login">Login</a>
+        </div>
+    </header>
+
+    <div class="main-wrapper">
+        <div class="split-layout">
+            <!-- Left Panel: Form -->
+            <main class="left-panel">
+
+                <div class="wizard-header">
+                    <span class="step-badge">Step 1 of 4</span>
+                    <a href="#" class="help-link"><i class="bi bi-question-circle"></i> Help</a>
+                </div>
+
+                <div class="progress-steps">
+                    <div class="step active"></div>
+                    <div class="step"></div>
+                    <div class="step"></div>
+                    <div class="step"></div>
+                </div>
+
+                <section class="intro-text">
+                    <h2>Let's set the foundation</h2>
+                    <p>Define your project identity and goal to build trust.</p>
+                </section>
+
+                <form id="campaignForm">
+                    <div class="input-group">
+                        <label>Campaign Title</label>
+                        <input type="text" id="inputTitle" placeholder="e.g. Clean Water for Highland Village"
+                            maxlength="60">
+                    </div>
+
+                    <div class="input-group">
+                        <label>Campaign Cover Image</label>
+                        <input type="file" id="inputImage" accept="image/*" class="form-control">
+                        <small class="text-muted">Recommended: 1200x600px JPG or PNG</small>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Goal Amount</label>
+                        <div class="amount-wrapper">
+                            <span class="currency">$</span>
+                            <input type="number" id="inputGoal" placeholder="25000">
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Category</label>
+                        <div class="category-grid">
+                            <button type="button" class="cat-btn active" data-cat="Social Impact">
+                                <i class="bi bi-heart-fill"></i> Social Impact
+                            </button>
+                            <button type="button" class="cat-btn" data-cat="Startup">
+                                <i class="bi bi-rocket-takeoff-fill"></i> Startup
+                            </button>
+                            <button type="button" class="cat-btn" data-cat="Education">
+                                <i class="bi bi-mortarboard-fill"></i> Education
+                            </button>
+                            <button type="button" class="cat-btn" data-cat="Environment">
+                                <i class="bi bi-tree-fill"></i> Environment
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="trust-tip">
+                        <i class="bi bi-shield-check"></i>
+                        <div>
+                            <strong>ImpactSeed Tip</strong>
+                            <p style="margin:0; font-size: 0.9rem;">Projects with clear goals are 40% more likely to
+                                succeed.</p>
+                        </div>
+                    </div>
+
+                    <footer class="form-footer">
+                        <button type="button" class="btn-preview d-md-none">
+                            <i class="bi bi-eye"></i> Preview
+                        </button>
+                        <button type="submit" class="btn-continue">
+                            Continue <i class="bi bi-arrow-right"></i>
+                        </button>
+                    </footer>
+                </form>
+            </main>
+
+            <!-- Right Panel: Live Preview -->
+            <aside class="right-panel">
+                <div class="preview-container">
+                    <h6
+                        style="text-align:center; color:#64748b; margin-bottom:1rem; font-weight:600; text-transform:uppercase; letter-spacing:1px; font-size:0.8rem;">
+                        Live Preview</h6>
+                    <div class="phone-mockup">
+                        <div class="preview-image">
+                            <i class="bi bi-image" style="font-size:2rem;"></i>
+                        </div>
+                        <div>
+                            <span class="preview-tag" id="previewCategory">SOCIAL IMPACT</span>
+                            <h3 class="preview-title" id="previewTitle">Your Campaign Title</h3>
+                            <p class="preview-meta">by <strong>You</strong></p>
+
+                            <div class="preview-progress">
+                                <div class="preview-bar" style="width: 0%"></div>
+                            </div>
+
+                            <div style="display:flex; justify-content:space-between; font-size:0.9rem;">
+                                <span style="font-weight:700; color:#0f172a;">$0 raised</span>
+                                <span style="color:#64748b;">0% of $<span id="previewGoal">...</span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <!-- Global Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-column">
+                <a href="index.html" class="logo-wrapper" style="margin-bottom: 1.25rem;">
+                    <img src="public/img/logo.png" alt="ImpactSeed" class="logo">
+                    <span class="logo-text">ImpactSeed</span>
+                </a>
+                <p>Empowering ideas that change the world. Join us in making a difference.</p>
+            </div>
+
+            <div class="footer-column">
+                <h5>Platform</h5>
+                <ul>
+                    <li><a href="ExploreCampanig.html">Explore</a></li>
+                    <li><a href="StartCampaign.html">Start Campaign</a></li>
+                    <li><a href="#">How it Works</a></li>
+                    <li><a href="#">Pricing</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h5>Community</h5>
+                <ul>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Guidelines</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h5>Stay Connected</h5>
+                <p style="margin-bottom:1rem;">Join our newsletter for updates.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="social-link"><i class="bi bi-twitter-x"></i></a>
+                    <a href="#" class="social-link"><i class="bi bi-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="bi bi-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 ImpactSeed. All rights reserved.</p>
+            <div style="display:flex; gap:1.5rem;">
+                <a href="#" style="color:#64748b; text-decoration:none; font-size:0.85rem;">Privacy Policy</a>
+                <a href="#" style="color:#64748b; text-decoration:none; font-size:0.85rem;">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
